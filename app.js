@@ -44,6 +44,7 @@ const upgrades = [
 
 const user = { bank: 0, clickPower: 0, autoPower: 0 }
 
+
 // SECTION TOOLS
 const compact = Intl.NumberFormat('en', { notation: 'compact' });
 
@@ -120,28 +121,6 @@ function insufficientFunds(upgrade) {
     return user.bank < upgrade.price
 }
 
-// Source: https://reacthustle.com/blog/how-to-convert-number-to-kmb-format-in-javascript
-function kmbFormat2(num, precision = 0) {
-    const map = [
-        { suffix: 'E', threshold: 1e18 },
-        { suffix: 'P', threshold: 1e15 },
-        { suffix: 'T', threshold: 1e12 },
-        { suffix: 'B', threshold: 1e9 },
-        { suffix: 'M', threshold: 1e6 },
-        { suffix: 'K', threshold: 1e3 },
-        { suffix: '', threshold: 1 },
-    ];
-
-    const found = map.find((x) => Math.abs(num) >= x.threshold);
-    if (found) {
-        const formatted = (num / found.threshold).toFixed(precision) + found.suffix;
-        return formatted;
-    }
-
-    return num;
-}
-
-
 
 // SECTION Initialization
 function reset() {
@@ -152,6 +131,3 @@ function reset() {
 }
 
 reset()
-
-
-
