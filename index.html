@@ -35,20 +35,25 @@
                         <div class="col-3">
                             <div
                                 class="fs-2 px-2 d-flex align-items-center justify-content-between border border-2 border-end-0 rounded-start">
-                                <i class="mdi mdi-gesture-double-tap"></i><span id="clickPower"
-                                    class="gf-scp">+33</span>
+                                <div>
+                                    +<span id="clickPower" class="gf-scp"></span>
+                                </div>
+                                <i class="mdi mdi-gesture-double-tap"></i>
                             </div>
                         </div>
                         <div class="col-6 my-3">
                             <div
                                 class="fs-1 px-2 d-flex align-items-center justify-content-between border border-2 rounded">
-                                <i class="mdi mdi-fish"></i><span id="userBank" class="gf-scp">1000</span>
+                                <i class="mdi mdi-fish"></i><span id="bank" class="gf-scp"></span>
                             </div>
                         </div>
                         <div class="col-3">
                             <div
                                 class="fs-2 px-2 d-flex align-items-center justify-content-between border border-2 border-start-0 rounded-end">
-                                <i class="mdi mdi-timer"></i><span id="autoPower" class="gf-scp">+20</span>
+                                <i class="mdi mdi-timer"></i>
+                                <div>
+                                    +<span id="autoPower" class="gf-scp"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -81,7 +86,8 @@
                                 <div class="col-6 d-flex flex-column">
                                     <div class="row g-0 d-flex align-items-center">
                                         <div class="col-6">
-                                            <button class="btn btn-dark d-flex align-items-center">
+                                            <button onclick="buy('c101')"
+                                                class="btn btn-dark d-flex align-items-center">
                                                 <div class="fs-5 py-1 px-3">
                                                     <span id="cornPrice" class="pe-2 gf-scp">10</span><i
                                                         class="mdi mdi-fish"></i>
@@ -95,7 +101,8 @@
 
                                     <div class="row my-1 g-0 d-flex align-items-center">
                                         <div class="col-6">
-                                            <button class="btn btn-dark d-flex align-items-center">
+                                            <button onclick="buy('c102')"
+                                                class="btn btn-dark d-flex align-items-center">
                                                 <div class="fs-5 py-1 px-3">
                                                     <span id="sonarPrice" class="pe-2 gf-scp">50</span><i
                                                         class="mdi mdi-fish"></i>
@@ -112,7 +119,8 @@
 
                                     <div class="row g-0 d-flex align-items-center">
                                         <div class="col-6">
-                                            <button class="btn btn-dark d-flex align-items-center">
+                                            <button onclick="buy('a101')"
+                                                class="btn btn-dark d-flex align-items-center">
                                                 <div class="fs-5 py-1 px-3">
                                                     <span id="catPrice" class="pe-2 gf-scp">10K</span><i
                                                         class="mdi mdi-fish"></i>
@@ -126,7 +134,8 @@
 
                                     <div class="row my-1 g-0 d-flex align-items-center">
                                         <div class="col-6">
-                                            <button class="btn btn-dark d-flex align-items-center">
+                                            <button onclick="buy('a102')"
+                                                class="btn btn-dark d-flex align-items-center">
                                                 <div class="fs-5 py-1 px-3">
                                                     <span id="dolphinPrice" class="pe-2 gf-scp">50K</span><i
                                                         class="mdi mdi-fish"></i>
@@ -146,7 +155,7 @@
 
                 <!-- SECTION GO FISH (Bottom Center Pane) -->
                 <div class="col-3 text-center">
-                    <img onclick="goFish()" class="img-fluid fish-button" src="./fish.gif" alt="">
+                    <img onclick="goFish()" class="img-fluid fish-button zoom" src="./fish.gif" alt="">
                 </div>
 
 

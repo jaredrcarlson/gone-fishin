@@ -28,3 +28,12 @@
     font-size: 1em;
     font-weight: bold;
 }
+
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    transform: scale(1.25);
+    cursor: pointer;
+}
