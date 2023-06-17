@@ -24,30 +24,30 @@
             <!-- SECTION TITLE (Vertical 0 Pane) -->
             <div class="row">
                 <div class="col-12 mt-2 text-center">
-                    <h3 class="gf-boogaloo">POND FISHER</h3>
+                    <h1 class="gf-boogaloo">POND FISHER</h1>
                 </div>
             </div>
 
             <!-- SECTION SCOREBOARD (Vertical 1 Pane) -->
             <div class="row justify-content-center">
-                <div class="col-10 text-bg-success border border-dark border-2 rounded">
+                <div class="col-8 text-bg-success border border-dark border-3 rounded">
                     <div class="row g-0 align-items-center justify-content-center">
                         <div class="col-3">
                             <div
-                                class="fs-4 px-1 d-flex align-items-center justify-content-between border border-end-0 rounded-start">
+                                class="fs-2 px-2 d-flex align-items-center justify-content-between border border-2 border-end-0 rounded-start">
                                 <i class="mdi mdi-gesture-double-tap"></i><span id="clickPower"
                                     class="gf-scp">+33</span>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 my-3">
                             <div
-                                class="fs-1 my-1 px-2 d-flex align-items-center justify-content-between border rounded">
+                                class="fs-1 px-2 d-flex align-items-center justify-content-between border border-2 rounded">
                                 <i class="mdi mdi-fish"></i><span id="userBank" class="gf-scp">1000</span>
                             </div>
                         </div>
                         <div class="col-3">
                             <div
-                                class="fs-4 px-1 d-flex align-items-center justify-content-between border border-start-0 rounded-end">
+                                class="fs-2 px-2 d-flex align-items-center justify-content-between border border-2 border-start-0 rounded-end">
                                 <i class="mdi mdi-timer"></i><span id="autoPower" class="gf-scp">+20</span>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                     <div class="row justify-content-center">
                         <div class="col-12 text-bg-success border border-dark border-2 rounded">
 
-                            <div class="row align-items-center justify-content-center">
+                            <div class="row fs-3 align-items-center justify-content-center">
                                 <div class="col-6">
                                     <div class="gf-boogaloo"><i class="pe-1 mdi mdi-gesture-double-tap"></i>CLICK
                                         UPGRADES
@@ -77,14 +77,15 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row pt-1 pb-2">
                                 <div class="col-6 d-flex flex-column">
-
                                     <div class="row g-0 d-flex align-items-center">
                                         <div class="col-6">
-                                            <button class="btn btn-sm btn-dark d-flex align-items-center">
-                                                <span id="cornPrice" class="pe-1 gf-scp">10</span><i
-                                                    class="mdi mdi-fish"></i>
+                                            <button class="btn btn-dark d-flex align-items-center">
+                                                <div class="fs-5 py-1 px-3">
+                                                    <span id="cornPrice" class="pe-2 gf-scp">10</span><i
+                                                        class="mdi mdi-fish"></i>
+                                                </div>
                                             </button>
                                         </div>
                                         <div class="col-6">
@@ -94,9 +95,12 @@
 
                                     <div class="row my-1 g-0 d-flex align-items-center">
                                         <div class="col-6">
-                                            <button class="btn btn-sm btn-dark d-flex align-items-center">
-                                                <span id="sonarPrice" class="pe-1 gf-scp">50</span><i
-                                                    class="mdi mdi-fish"></i>
+                                            <button class="btn btn-dark d-flex align-items-center">
+                                                <div class="fs-5 py-1 px-3">
+                                                    <span id="sonarPrice" class="pe-2 gf-scp">50</span><i
+                                                        class="mdi mdi-fish"></i>
+                                                </div>
+
                                             </button>
                                         </div>
                                         <div class="col-6">
@@ -108,9 +112,11 @@
 
                                     <div class="row g-0 d-flex align-items-center">
                                         <div class="col-6">
-                                            <button class="btn btn-sm btn-dark d-flex align-items-center">
-                                                <span id="catPrice" class="pe-1 gf-scp">10K</span><i
-                                                    class="mdi mdi-fish"></i>
+                                            <button class="btn btn-dark d-flex align-items-center">
+                                                <div class="fs-5 py-1 px-3">
+                                                    <span id="catPrice" class="pe-2 gf-scp">10K</span><i
+                                                        class="mdi mdi-fish"></i>
+                                                </div>
                                             </button>
                                         </div>
                                         <div class="col-6">
@@ -120,9 +126,11 @@
 
                                     <div class="row my-1 g-0 d-flex align-items-center">
                                         <div class="col-6">
-                                            <button class="btn btn-sm btn-dark d-flex align-items-center">
-                                                <span id="dolphinPrice" class="pe-1 gf-scp">50K</span><i
-                                                    class="mdi mdi-fish"></i>
+                                            <button class="btn btn-dark d-flex align-items-center">
+                                                <div class="fs-5 py-1 px-3">
+                                                    <span id="dolphinPrice" class="pe-2 gf-scp">50K</span><i
+                                                        class="mdi mdi-fish"></i>
+                                                </div>
                                             </button>
                                         </div>
                                         <div class="col-6">
@@ -135,10 +143,12 @@
                     </div>
                 </div>
 
+
                 <!-- SECTION GO FISH (Bottom Center Pane) -->
                 <div class="col-3 text-center">
                     <img onclick="goFish()" class="img-fluid fish-button" src="./fish.gif" alt="">
                 </div>
+
 
                 <!-- SECTION STATS (Bottom Right Pane)-->
                 <div class="col-4 me-2">
@@ -146,7 +156,7 @@
                     <div class="row justify-content-center">
                         <div class="col-12 text-bg-success border border-dark border-2 rounded">
 
-                            <div class="row align-items-center justify-content-center">
+                            <div class="row fs-3 lign-items-center justify-content-center">
                                 <div class="col-6">
                                     <div class="gf-boogaloo"><i class="pe-1 mdi mdi-gesture-double-tap"></i>CLICK STATS
                                     </div>
@@ -156,43 +166,43 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row pt-1 pb-2">
                                 <div class="col-6 d-flex flex-column">
 
-                                    <div class="row g-1 align-items-center">
+                                    <div class="row fs-5 g-1 align-items-center">
                                         <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-1 rounded">
+                                            <div class="m-1 p-2 text-center border border-2 rounded">
                                                 <span id="cornQuantity" class="gf-scp">30</span>
                                             </div>
                                         </div>
                                         <div class="col-4">
                                             <div class="sm-text">Corn</div>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-2 fs-3">
                                             <div><i class="mdi mdi-arrow-right-bold-circle-outline"></i>
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-1 rounded">
+                                            <div class="m-1 p-2 text-center border border-2 rounded">
                                                 <span id="cornPower" class="gf-scp">30</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row g-1 align-items-center">
+                                    <div class="row fs-5 g-1 align-items-center">
                                         <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-1 rounded">
+                                            <div class="m-1 p-2 text-center border border-2 rounded">
                                                 <span id="sonarQuantity" class="gf-scp">5</span>
                                             </div>
                                         </div>
                                         <div class="col-4">
                                             <div class="sm-text">Sonar</div>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-2 fs-3">
                                             <div><i class="mdi mdi-arrow-right-bold-circle-outline"></i>
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-1 rounded">
+                                            <div class="m-1 p-2 text-center border border-2 rounded">
                                                 <span id="sonarPower" class="gf-scp">25</span>
                                             </div>
                                         </div>
@@ -202,40 +212,40 @@
                                 </div>
                                 <div class="col-6">
 
-                                    <div class="row g-1 align-items-center">
+                                    <div class="row fs-5 g-1 align-items-center">
                                         <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-1 rounded">
+                                            <div class="m-1 p-2 text-center border border-2 rounded">
                                                 <span id="catQuantity" class="gf-scp">2</span>
                                             </div>
                                         </div>
                                         <div class="col-4">
                                             <div class="sm-text">Cats</div>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-2 fs-3">
                                             <div><i class="mdi mdi-arrow-right-bold-circle-outline"></i>
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-1 rounded">
+                                            <div class="m-1 p-2 text-center border border-2 rounded">
                                                 <span id="catPower" class="gf-scp">20</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row g-1 align-items-center">
+                                    <div class="row fs-5 g-1 align-items-center">
                                         <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-1 rounded">
+                                            <div class="m-1 p-2 text-center border border-2 rounded">
                                                 <span id="dolphinQuantity" class="gf-scp">3</span>
                                             </div>
                                         </div>
                                         <div class="col-4">
                                             <div class="sm-text">Dolphins</div>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-2 fs-3">
                                             <div><i class="mdi mdi-arrow-right-bold-circle-outline"></i>
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-1 rounded">
+                                            <div class="m-1 p-2 text-center border border-2 rounded">
                                                 <span id="dolphinPower" class="gf-scp">150</span>
                                             </div>
                                         </div>
