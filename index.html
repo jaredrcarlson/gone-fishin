@@ -4,53 +4,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pond Fisher</title>
+    <title>Gone Fishin'</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Source+Code+Pro&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cantora+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header></header>
+
     <main class="bg-image bg-custom">
-
-        <div class="container-fluid upper-container">
-
-            <!-- SECTION TITLE (Vertical 0 Pane) -->
+        <!-- ANCHOR CONTAINER 0 -->
+        <div class="container-fluid">
+            <!-- SECTION TITLE-->
             <div class="row">
-                <div class="col-12 mt-2 text-center">
-                    <h1 class="gf-boogaloo">POND FISHER</h1>
+                <div class="col-12 my-2 text-center">
+                    <h1 class="gf-boogaloo m-0">GONE FISHIN'</h1>
                 </div>
             </div>
-
-            <!-- SECTION SCOREBOARD (Vertical 1 Pane) -->
+            <!-- SECTION SCOREBOARD -->
             <div class="row justify-content-center">
-                <div class="col-8 text-bg-success border border-dark border-3 rounded">
-                    <div class="row g-0 align-items-center justify-content-center">
-                        <div class="col-3">
+                <div class="col-11 text-bg-success bg-gradient border border-dark border-3 rounded-pill">
+                    <div class="row fs-2 g-0 py-1 align-items-center justify-content-center">
+                        <div class="col-5 pe-2 d-flex justify-content-between">
+                            <span id="clickTokens" class="gf-scp"></span>
+                            <i class="mdi mdi-gesture-double-tap"></i>
+                        </div>
+                        <div class="col-1">
                             <div
-                                class="fs-2 px-2 d-flex align-items-center justify-content-between border border-2 border-end-0 rounded-start">
+                                class="fs-4 py-1 px-2 bg-bankTotal bg-gradient d-flex align-items-center justify-content-between border border-2 rounded">
+                                <span onclick="quit()" class="quit"><i class="mdi mdi-fish"></i></span><span
+                                    id="bankTotal" class="gf-scp"></span>
+                            </div>
+                        </div>
+                        <div class="col-5 ps-2 d-flex justify-content-between">
+                            <i class="mdi mdi-timer-refresh-outline"></i>
+                            <span id="autoTokens" class="gf-scp auto-fish"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANCHOR CONTAINER 1 -->
+        <div class="container-fluid mt-3">
+            <!-- SECTION UPGRADES -->
+            <div class="row justify-content-center">
+                <div class="col-11">
+                    <div class="row justify-content-between align-items-start">
+                        <!-- SECTION CLICK UPGRADES -->
+                        <div class="col-3 text-bg-success bg-gradient border border-dark border-3 rounded">
+                            <!-- HEADING -->
+                            <div class="row fs-3 mt-1">
+                                <div class="col-12 d-flex justify-content-between">
+                                    <div class="ps-3 gf-boogaloo">CLICK UPGRADES</div>
+                                    <div><i class="pe-2 mdi mdi-gesture-double-tap"></i></div>
+                                </div>
+                            </div>
+                            <!-- ITEM ROW 0 -->
+                            <div class="row align-items-center">
+                                <div class="col-2">
+                                    <button id="c101" onclick="buy('c101')" class="btn btn-dark btn-lg button-text"><i
+                                            class="fs-3 mdi mdi-corn"></i></button>
+                                </div>
+                                <div class="col-3">
+                                    <div class="fs-3 fw-bold"><i class="fs-3 pe-1 mdi mdi-gesture-double-tap"></i>+1
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="fs-4 fw-bold">Corn</div>
+                                </div>
+                                <div class="col-4 fs-3 fw-bold text-center">
+                                    <div class="my-2 p-1 border border-warning border-1 rounded-pill">
+                                        <span id="cornPrice" class="gf-scp"></span><i
+                                            class="fs-3 ps-2 mdi mdi-fish"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ITEM ROW 1 -->
+                            <div class="row align-items-center mb-1">
+                                <div class="col-2">
+                                    <button id="c102" onclick="buy('c102')" class="btn btn-danger btn-lg button-text"><i
+                                            class="fs-3 mdi mdi-radar"></i></button>
+                                </div>
+                                <div class="col-3">
+                                    <div class="fs-3 fw-bold"><i class="fs-3 pe-1 mdi mdi-gesture-double-tap"></i>+5
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="fs-4 fw-bold">Sonar</div>
+                                </div>
+                                <div class="col-4 fs-3 fw-bold text-center">
+                                    <div class="my-2 p-1 border border-warning border-1 rounded-pill">
+                                        <span id="sonarPrice" class="gf-scp"></span><i
+                                            class="fs-3 ps-2 mdi mdi-fish"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CURRENT RESOURCES -->
+                        <div class="col-5 ms-4 text-bg-success bg-gradient border border-dark border-3 rounded-pill">
+                            <div class="fs-1 px-2 py-1 d-flex align-items-center justify-content-between">
+                                <i class="ps-2 mdi mdi-fish"></i><span id="bank" class="pe-2 gf-scp"></span>
+                            </div>
+                        </div>
+                        <!-- SECTION AUTO UPGRADES -->
+                        <div class="col-3 text-bg-success bg-gradient border border-dark border-3 rounded">
+                            <!-- HEADING -->
+                            <div class="row fs-3 mt-1">
+                                <div class="col-12 d-flex justify-content-between">
+                                    <div class="ps-3 gf-boogaloo">AUTO UPGRADES</div>
+                                    <div><i class="mdi mdi-timer-refresh-outline"></i><i
+                                            class="pe-2 mdi mdi-timer-3"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ITEM ROW 0 -->
+                            <div class="row align-items-center">
+                                <div class="col-2">
+                                    <button id="a101" onclick="buy('a101')" class="btn btn-dark btn-lg button-text"><i
+                                            class="fs-3 mdi mdi-cat"></i></button>
+                                </div>
+                                <div class="col-3">
+                                    <div class="fs-3 fw-bold"><i class="fs-3 pe-1 mdi mdi-timer-refresh-outline"></i>+10
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="fs-4 fw-bold">Cat</div>
+                                </div>
+                                <div class="col-4 fs-3 fw-bold text-center">
+                                    <div class="my-2 p-1 border border-warning border-1 rounded-pill">
+                                        <span id="catPrice" class="gf-scp"></span><i class="fs-3 ps-2 mdi mdi-fish"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ITEM ROW 1 -->
+                            <div class="row align-items-center mb-1">
+                                <div class="col-2">
+                                    <button id="a102" onclick="buy('a102')" class="btn btn-danger btn-lg button-text"><i
+                                            class="fs-3 mdi mdi-dolphin"></i></button>
+                                </div>
+                                <div class="col-3">
+                                    <div class="fs-3 fw-bold"><i class="fs-3 pe-1 mdi mdi-timer-refresh-outline"></i>+50
+                                    </div>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <div class="fs-4 fw-bold">Dolphin</div>
+                                </div>
+                                <div class="col-4 fs-3 fw-bold text-center">
+                                    <div class="my-2 p-1 border border-warning border-1 rounded-pill">
+                                        <span id="dolphinPrice" class="gf-scp"></span><i
+                                            class="fs-3 ps-2 mdi mdi-fish"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SECTION POWER -->
+            <div class="row justify-content-center mt-3">
+                <div class="col-11">
+                    <div class="row justify-content-between align-items-center">
+                        <!-- SECTION CLICK POWER -->
+                        <div class="col-3 text-bg-success bg-gradient border border-dark border-3 rounded">
+                            <!-- HEADING -->
+                            <div class="row fs-3 mt-1">
+                                <div class="col-12">
+                                    <div class="ps-3 gf-boogaloo">ACTIVE<i
+                                            class="px-2 mdi mdi-gesture-double-tap"></i>UPGRADES
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ITEM ROW 0 -->
+                            <div class="row mt-1 mb-2 fs-3 align-items-center">
+                                <div class="col-3">
+                                    <div class="p-2 text-center border border-2 rounded">
+                                        <span id="cornQuantity" class="gf-scp"></span>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-corn pe-2"></i>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-arrow-right-bold"></i>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-gesture-double-tap"></i>
+                                </div>
+                                <div class="col-3">
+                                    <div class="p-2 text-center border border-2 rounded">
+                                        <span id="cornPower" class="gf-scp"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ITEM ROW 1 -->
+                            <div class="row mt-1 mb-2 fs-3 align-items-center">
+                                <div class="col-3">
+                                    <div class="p-2 text-center border border-2 rounded">
+                                        <span id="sonarQuantity" class="gf-scp"></span>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-radar pe-2"></i>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-arrow-right-bold"></i>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-gesture-double-tap"></i>
+                                </div>
+                                <div class="col-3">
+                                    <div class="p-2 text-center border border-2 rounded">
+                                        <span id="sonarPower" class="gf-scp"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SECTION AUTO POWER -->
+                        <div class="col-3 text-bg-success bg-gradient border border-dark border-3 rounded">
+                            <!-- HEADING -->
+                            <div class="row fs-3 mt-1">
+                                <div class="col-12">
+                                    <div class="ps-3 gf-boogaloo">ACTIVE<i
+                                            class="ps-2 mdi mdi-timer-refresh-outline"></i><i
+                                            class="pe-2 mdi mdi-timer-3"></i>UPGRADES</div>
+                                </div>
+                            </div>
+                            <!-- ITEM ROW 0 -->
+                            <div class="row mt-1 mb-2 fs-3 align-items-center">
+                                <div class="col-3">
+                                    <div class="p-2 text-center border border-2 rounded">
+                                        <span id="catQuantity" class="gf-scp"></span>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-cat pe-2"></i>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-arrow-right-bold"></i>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-timer-refresh-outline"></i>
+                                </div>
+                                <div class="col-3">
+                                    <div class="p-2 text-center border border-2 rounded">
+                                        <span id="catPower" class="gf-scp"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ITEM ROW 1 -->
+                            <div class="row mt-1 mb-2 fs-3 align-items-center">
+                                <div class="col-3">
+                                    <div class="p-2 text-center border border-2 rounded">
+                                        <span id="dolphinQuantity" class="gf-scp"></span>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-dolphin pe-2"></i>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-arrow-right-bold"></i>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fs-1 mdi mdi-timer-refresh-outline"></i>
+                                </div>
+                                <div class="col-3">
+                                    <div class="p-2 text-center border border-2 rounded">
+                                        <span id="dolphinPower" class="gf-scp"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANCHOR CONTAINER 2 -->
+        <div class="container-fluid mt-3">
+            <!-- SECTION CURRENT UPGRADE POWER -->
+            <div class="row justify-content-center">
+                <div class="col-11">
+                    <div class="row justify-content-between">
+                        <!-- SECTION CLICK POWER -->
+                        <div class="col-2 ms-4 text-bg-success bg-gradient border border-dark border-3 rounded-pill">
+                            <div class="fs-1 px-2 py-1 d-flex align-items-center justify-content-between">
+                                <i onclick="freebie('click', 1000)" class="mdi mdi-gesture-double-tap freebies"></i>
                                 <div>
                                     +<span id="clickPower" class="gf-scp"></span>
                                 </div>
-                                <i class="mdi mdi-gesture-double-tap"></i>
                             </div>
                         </div>
-                        <div class="col-6 my-3">
-                            <div
-                                class="fs-1 px-2 d-flex align-items-center justify-content-between border border-2 rounded">
-                                <i class="mdi mdi-fish"></i><span id="bank" class="gf-scp"></span>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div
-                                class="fs-2 px-2 d-flex align-items-center justify-content-between border border-2 border-start-0 rounded-end">
-                                <i class="mdi mdi-timer"></i>
+                        <!-- SECTION AUTO POWER -->
+                        <div class="col-2 me-4 text-bg-success bg-gradient border border-dark border-3 rounded-pill">
+                            <div class="fs-1 px-2 py-1 d-flex align-items-center justify-content-between">
+                                <i onclick="freebie('auto', 1000)" class="mdi mdi-timer-refresh-outline freebies"></i>
                                 <div>
                                     +<span id="autoPower" class="gf-scp"></span>
                                 </div>
@@ -59,216 +312,45 @@
                     </div>
                 </div>
             </div>
-
         </div>
-        <div class="container-fluid">
 
-            <!-- SECTION BOTTOM PANES (Vertical 2 Pane)-->
-            <div class="row justify-content-between align-items-center">
-                <!-- SECTION UPGRADES (Bottom Left Pane) -->
-                <div class="col-4 ms-2">
-
-                    <div class="row justify-content-center">
-                        <div class="col-12 text-bg-success border border-dark border-2 rounded">
-
-                            <div class="row fs-3 align-items-center justify-content-center">
-                                <div class="col-6">
-                                    <div class="gf-boogaloo"><i class="pe-1 mdi mdi-gesture-double-tap"></i>CLICK
-                                        UPGRADES
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="gf-boogaloo"><i class="pe-1 mdi mdi-timer"></i>AUTO UPGRADES</div>
-                                </div>
-                            </div>
-
-                            <div class="row pt-1 pb-2">
-                                <div class="col-6 d-flex flex-column">
-                                    <div class="row g-0 d-flex align-items-center">
-                                        <div class="col-6">
-                                            <button onclick="buy('c101')"
-                                                class="btn btn-dark d-flex align-items-center">
-                                                <div class="fs-5 py-1 px-3">
-                                                    <span id="cornPrice" class="pe-2 gf-scp">10</span><i
-                                                        class="mdi mdi-fish"></i>
-                                                </div>
-                                            </button>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="sm-text">Corn<br />+1</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row my-1 g-0 d-flex align-items-center">
-                                        <div class="col-6">
-                                            <button onclick="buy('c102')"
-                                                class="btn btn-dark d-flex align-items-center">
-                                                <div class="fs-5 py-1 px-3">
-                                                    <span id="sonarPrice" class="pe-2 gf-scp">50</span><i
-                                                        class="mdi mdi-fish"></i>
-                                                </div>
-
-                                            </button>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="sm-text">Sonar<br />+5</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-
-                                    <div class="row g-0 d-flex align-items-center">
-                                        <div class="col-6">
-                                            <button onclick="buy('a101')"
-                                                class="btn btn-dark d-flex align-items-center">
-                                                <div class="fs-5 py-1 px-3">
-                                                    <span id="catPrice" class="pe-2 gf-scp">10K</span><i
-                                                        class="mdi mdi-fish"></i>
-                                                </div>
-                                            </button>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="sm-text">Cat<br />+10 / 3s</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row my-1 g-0 d-flex align-items-center">
-                                        <div class="col-6">
-                                            <button onclick="buy('a102')"
-                                                class="btn btn-dark d-flex align-items-center">
-                                                <div class="fs-5 py-1 px-3">
-                                                    <span id="dolphinPrice" class="pe-2 gf-scp">50K</span><i
-                                                        class="mdi mdi-fish"></i>
-                                                </div>
-                                            </button>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="sm-text">Dolphin<br />+50 / 3s</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- SECTION GO FISH (Bottom Center Pane) -->
-                <div class="col-3 text-center">
+        <!-- ANCHOR CONTAINER 3 -->
+        <div class="container-fluid mt-4">
+            <!-- SECTION MAIN BUTTON -->
+            <div class="row pt-1 justify-content-center">
+                <div class="col-12 text-center">
                     <img onclick="goFish()" class="img-fluid fish-button zoom" src="./fish.gif" alt="">
                 </div>
+            </div>
+        </div>
 
 
-                <!-- SECTION STATS (Bottom Right Pane)-->
-                <div class="col-4 me-2">
-
-                    <div class="row justify-content-center">
-                        <div class="col-12 text-bg-success border border-dark border-2 rounded">
-
-                            <div class="row fs-3 lign-items-center justify-content-center">
-                                <div class="col-6">
-                                    <div class="gf-boogaloo"><i class="pe-1 mdi mdi-gesture-double-tap"></i>CLICK STATS
-                                    </div>
+        <!-- <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="row justify-content-between">
+                        <div class="col-1 ms-4 text-bg-success bg-gradient border border-dark border-3 rounded-pill">
+                            <div onclick="freebie('click', 1000)"
+                                class="fs-4 px-2 py-1 d-flex align-items-center justify-content-between freebies">
+                                <div>
+                                    + 1000<span id="clickPower" class="gf-scp"></span>
                                 </div>
-                                <div class="col-6">
-                                    <div class="gf-boogaloo"><i class="pe-1 mdi mdi-timer"></i>AUTO STATS</div>
-                                </div>
+                                <i class="mdi mdi-gesture-double-tap"></i>
                             </div>
-
-                            <div class="row pt-1 pb-2">
-                                <div class="col-6 d-flex flex-column">
-
-                                    <div class="row fs-5 g-1 align-items-center">
-                                        <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-2 rounded">
-                                                <span id="cornQuantity" class="gf-scp">30</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="sm-text">Corn</div>
-                                        </div>
-                                        <div class="col-2 fs-3">
-                                            <div><i class="mdi mdi-arrow-right-bold-circle-outline"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-2 rounded">
-                                                <span id="cornPower" class="gf-scp">30</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row fs-5 g-1 align-items-center">
-                                        <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-2 rounded">
-                                                <span id="sonarQuantity" class="gf-scp">5</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="sm-text">Sonar</div>
-                                        </div>
-                                        <div class="col-2 fs-3">
-                                            <div><i class="mdi mdi-arrow-right-bold-circle-outline"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-2 rounded">
-                                                <span id="sonarPower" class="gf-scp">25</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
+                        </div>
+                        <div class="col-1 me-4 text-bg-success bg-gradient border border-dark border-3 rounded-pill">
+                            <div onclick="freebie('auto', 1000)"
+                                class="fs-4 px-2 py-1 d-flex align-items-center justify-content-between freebies">
+                                <div>
+                                    + 1000<span id="autoPower" class="gf-scp"></span>
                                 </div>
-                                <div class="col-6">
-
-                                    <div class="row fs-5 g-1 align-items-center">
-                                        <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-2 rounded">
-                                                <span id="catQuantity" class="gf-scp">2</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="sm-text">Cats</div>
-                                        </div>
-                                        <div class="col-2 fs-3">
-                                            <div><i class="mdi mdi-arrow-right-bold-circle-outline"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-2 rounded">
-                                                <span id="catPower" class="gf-scp">20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row fs-5 g-1 align-items-center">
-                                        <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-2 rounded">
-                                                <span id="dolphinQuantity" class="gf-scp">3</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="sm-text">Dolphins</div>
-                                        </div>
-                                        <div class="col-2 fs-3">
-                                            <div><i class="mdi mdi-arrow-right-bold-circle-outline"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="m-1 p-2 text-center border border-2 rounded">
-                                                <span id="dolphinPower" class="gf-scp">150</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
+                                <i class="mdi mdi-timer-refresh-outline"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-        </div>
+        </div> -->
 
     </main>
 
